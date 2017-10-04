@@ -20,6 +20,49 @@ print_hi('Tom')
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
+execute `node filename.js`.
+
+```javascript
+var arr = [1, 2, 3]; 
+arr.forEach(function (item) { 
+    console.log(item); 
+}); 
+ 
+console.log('a ha, so what?'); 
+
+```
+output is:
+```
+1
+2
+3
+a ha, so what?
+```
+
+```javascript
+var fs = require('fs'); 
+fs.readFile('my_file.txt', function onFileData(err, data) { 
+    console.log(''); 
+    console.log(data.toString()); 
+}); 
+  
+console.log('reading file.....'); 
+```
+output is:
+```
+reading file.....
+
+fklajdflkjalkdfjla
+ksfjlajfl
+kfjls
+```
+I/O operations is asychronized performed. 
+
+
+
+
+
+
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/

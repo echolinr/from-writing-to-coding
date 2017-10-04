@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "Asynchronization in Node.js"
+date:   2017-10-01 21:53:36 -0700
+categories: jekyll update
+---
+execute `node filename.js`.
+
+# Example 1
+```javascript
+var arr = [1, 2, 3]; 
+arr.forEach(function (item) { 
+    console.log(item); 
+}); 
+ 
+console.log('a ha, so what?'); 
+
+```
+output is:
+```
+1
+2
+3
+a ha, so what?
+```
+
+# Example 2
+```javascript
+var fs = require('fs'); 
+fs.readFile('my_file.txt', function onFileData(err, data) { 
+    console.log(''); 
+    console.log(data.toString()); 
+}); 
+  
+console.log('reading file.....'); 
+```
+output is:
+```
+reading file.....
+
+asjdfioa
+aoisjdfoia
+a98eur89uaijd
+398479
+ads
+```
+I/O operations is asychronized performed. 
+
+
+
+
+# Exmaple 3
+
+```javascript
+function waitThreeSeconds() {
+    var ms = 3000 + new Date().getTime();
+    while( new Date() < ms ) {
+
+    }
+    console.log("finished function");
+}
+
+function clickHandler() {
+    console.log("click event");
+}
+
+document.addEventListener("click", clickHandler);
+
+waitThreeSeconds();
+console.log('finished exectuion');
+```
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello world</title>
+</head>
+<body>
+    <script src="server.js" type="text/javascript"></script>
+</body>
+</html>
+```
+
+Result:
+`click` event is executed after other non-event functions finished running.
+
+
+async operations are usually for:
+1. I/O
+2. communication
+
+
+
+
+
+
+
+

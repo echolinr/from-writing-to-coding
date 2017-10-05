@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Angular Component"
+title:  "First Angular Component"
 date:   2017-10-04 21:53:36 -0700
 categories: Angular
 ---
@@ -59,7 +59,8 @@ export class Problem {
 
 ## Add a var in class
 
-Go to `problem-list.component.ts`, import { Problem}  from `problem.ts`. Create a Problem[] array
+Go to `problem-list.component.ts`, import { Problem}  from `problem.ts`. 
+Add a variable 	`problem` of Schema Problem.
 ```typescript
 export class ProblemListComponent implements OnInit {
   problems: Problem[];
@@ -68,7 +69,8 @@ export class ProblemListComponent implements OnInit {
 ## Create some dummy data
 
 Create a file containing dummy data: an array which contains five problems. Call it `mock-problems.ts`.
-```typescript
+Note: remember to export module.
+```ts
 import { Problem } from './data-structure/problem';
 export const PROBLEMS: Problem[] = [
   {
@@ -84,11 +86,11 @@ export const PROBLEMS: Problem[] = [
   }
 ];
 ```
+To process the data, we need service. You need to see the next post for service generation.
 
 ## View: create a list
 
 We want to create a table format list. let's go to boostrap and copy a list-group component.
-
 ```html
 <div class="container">
   <div class="list-group">
@@ -114,10 +116,9 @@ The syntax is:
 
 This gets every item in problem array. if you print `problem.id`, it gives you their id one by one.`problem.desc` is the description value of a problem.
 
-#add styles to the list
+## add styles to the list
 I do not show css here. Just import and copy some from bootstrap.
 'pull-left label difficulty diff-' + easy or medium or hard is a data-binding (due to Angular)
-
 ```html
 <div class="container">
   <div class="list-group">
@@ -158,7 +159,6 @@ Boostrap uses jQuery to support animation. we need to `npm install jquery`.
       ],
 ```
 * Add javascript files to script[]
-
 ```ts
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",

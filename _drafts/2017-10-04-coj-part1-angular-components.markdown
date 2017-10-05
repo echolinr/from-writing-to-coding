@@ -1,6 +1,11 @@
-coj-part1-angular-components.markdown
+---
+layout: post
+title:  "Angular Component"
+date:   2017-10-04 21:53:36 -0700
+categories: Angular
+---
 
-#generate angular components
+## Generate Angular components
 
 generate a components named "problem-list" under `src/app/components` directory:
 

@@ -2,11 +2,18 @@
 layout: post
 title:  "Asynchronization in Node.js"
 date:   2017-10-01 21:53:36 -0700
-categories: jekyll update
+categories: NodeJS
 ---
-execute `node filename.js`.
 
-# Example 1
+## What is Node.js?
+Node.js is a JavaScript run-time environment. It's not a new language, quite similar to JVM in Java. 
+So, to run a javascript file when you have Node.js installed, you can use the command `node filename.js`.
+
+## Node.js is asynchronous. Node.js uses an event-driven, non-blocking I/O model. 
+
+JavaScript language, which is synchronous, executes commands line by line from top to bottom. For instance, Example 1 contains two functions, the second one gets executed after the first one finishes and exits. 
+
+### Example 1
 ```javascript
 var arr = [1, 2, 3]; 
 arr.forEach(function (item) { 
@@ -24,7 +31,11 @@ output is:
 a ha, so what?
 ```
 
-# Example 2
+However, Node.js deals with I/O communications differently. When it comes to run a function which calls I/O operations, Node.js puts the I/O function aside into a queue where all I/O functions, aka events, are lined up to wait to be executed. When event is in the queue, Node.js continues to run the next command. 
+
+In Example 2, `readFile` is an I/O reading event. Node.js puts it away and runs next command `console.log`. 
+
+### Example 2
 ```javascript
 var fs = require('fs'); 
 fs.readFile('my_file.txt', function onFileData(err, data) { 
@@ -44,12 +55,11 @@ a98eur89uaijd
 398479
 ads
 ```
-I/O operations is asychronized performed. 
 
+In the next exmaple:
+`waitThreeSeconds` is not an event whereas `clickHandler` is an event. Eventhough we resilently click our mouse to make the click action performed before the code runs. Node.js does not process `clickHandler` until `waitThreeSeconds` finishes. 
 
-
-
-# Exmaple 3
+### Exmaple 3
 
 ```javascript
 function waitThreeSeconds() {
@@ -83,6 +93,10 @@ console.log('finished exectuion');
 ```
 
 Result:
+```
+finsihed function
+
+```
 `click` event is executed after other non-event functions finished running.
 
 

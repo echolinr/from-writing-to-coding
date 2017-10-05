@@ -1,4 +1,9 @@
-
+---
+layout: post
+title:  "Processes vs Threads"
+date:   2017-10-01 21:53:36 -0700
+categories: Computer
+---
 Process and thread are two basic concepts in operating system. 
 
 

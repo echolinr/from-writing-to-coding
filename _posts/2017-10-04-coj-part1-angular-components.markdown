@@ -1,17 +1,17 @@
 ---
 layout: post
-title:  "First Angular Component"
+title:  "First Angular Component "
 date:   2017-10-04 21:53:36 -0700
 categories: Angular
 ---
 
 ## Generate Angular components
 
-To generate a components named "problem-list" under `src/app/components` directory:
-
-`ng g c problem-list`
-`g` stands for generate; `c` is for component.
-`it`: inline template; `is`: inline style, no css file generated
+To generate a components named "problem-list" under `src/app/components` directory: `ng g c problem-list`
+* `g` stands for generate;
+* `c` is for component.
+* `it`: inline template;
+* `is`: inline style, no css file generated
 
 It creates four files:
 * x.component.css   -- Style
@@ -19,17 +19,17 @@ It creates four files:
 * x.component.spec.ts   -- Test
 * x.component.ts -- Control
 
-and updates `app.module.ts`, which is in bootfile because in `main.ts`, `bootstrape(app.module)` specifies that the bootfile is `app.module`.
+It also updates `app.module.ts`, which is in bootfile because in `main.ts`, `bootstrap(app.module)` specifies that the bootfile is `app.module`.
 
-All Angular componets must be added into `declaration` list of app.modules.ts if it wants to be loaded.
+All Angular components must be added into `declaration` list of app.modules.ts if it wants to be loaded.
 
 Now let's take a look at the new component.ts file:
 each component has
-1. selector - 
-2. templateUrl
-3. styleUrl
+1. selector - component
+2. templateUrl - html
+3. styleUrl - css
 
-```typescript
+```ts
 Component({
   selector: 'app-problem-list',
   templateUrl: './problem-list.component.html',
@@ -37,17 +37,16 @@ Component({
 })
 ```
 
-Put problem list selector into `app.compoennet.html`:
-
+Put problem list selector into 'app.compoennet.html':
 ```html
 <app-problem-list><app-problem-list/>
 ```
 
 ## Create a data structure (the problem schema)
 
-Create a folder `data-structure` and create `problem.ts`
+Create a folder 'data-structure' and create 'problem.ts':
 
-In this ts file, define problem schema:
+In this typescript file, define problem schema:
 ```typescript
 export class Problem {
     id: number;
@@ -59,9 +58,10 @@ export class Problem {
 
 ## Add a var in class
 
-Go to `problem-list.component.ts`, import { Problem}  from `problem.ts`. 
+Go to `problem-list.component.ts`, import { Problem}  from `problem.ts`.
 Add a variable 	`problem` of Schema Problem.
-```typescript
+
+```ts
 export class ProblemListComponent implements OnInit {
   problems: Problem[];
   ...
@@ -76,8 +76,8 @@ export const PROBLEMS: Problem[] = [
   {
     id: 1,
     name: "Two Sum",
-    desc: 
-	
+    desc:
+
 	...
     id: 5,
 	name: "..."
@@ -100,7 +100,7 @@ We want to create a table format list. let's go to boostrap and copy a list-grou
   </div>
 </div>
 ```
-## What does `export` mean? 
+## What does `export` mean?
 If you others need to call a class in a call, you need to export the class.
 Other files can call data in another file. if you don't want a file content to be used, just do not write export, then external files cannot import its data.
 
@@ -109,7 +109,7 @@ For example, {{problem.difficulty}}
 
 
 ## `ngFor`: render item in a list/array
-`ngFor` is Angular's for loop. It trasverses each item in an array. 
+`ngFor` is Angular's for loop. It trasverses each item in an array.
 The syntax is:
 `*ngFor = "let problem of problems"` problem is the self-defined name to present each item in this array.
 `problem.desc` is the description value of a problem.
@@ -138,7 +138,7 @@ I do not show css here. Just import and copy some from bootstrap.
 ## install and add bootstrap
 
 1. add with CDN
- 
+
 To use CDN link, add the link address to `index.html`. Be careful, a production project should not use CDN links as the link may become invalid.
 
 2. or `npm install bootsrap@3 --save`

@@ -12,10 +12,12 @@ categories: Angular
 It auto adds selector into 'app.module.ts
 
 2. Add its selector to view 'app.component.html' to show the new component
+
 ```html
 <app-problem-list />
 <app-problem-detail />
 ```
+
 ## Angular Router
 
 Client side routing: use 'angular-router' which is Angular's routing library.

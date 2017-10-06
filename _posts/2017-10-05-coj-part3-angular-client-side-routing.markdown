@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "Second Component and Angular Routing"
-date:   2017-10-05 02:53:36 -0700
+date:   2017-10-05 03:53:36 -0700
 categories: Angular
 ---
+
 ## Generate a problem-detail component
 
 1. `ng g c problem-detail`
@@ -94,7 +95,7 @@ Add router to view ('problem-detail.component.html'):
 ...
 ```
 
-## Render problem in 
+## Render problem in mock file
 1. import  mock data
 ```ts
 import { Problem } from 'app/data-structure/problem';
@@ -106,7 +107,7 @@ export class ProblemDetailComponent implements OnInit {
   problem: Problem;
 ...
 ```
-2. Write view (problem-detail.component.html):
+2. Write the view (problem-detail.component.html):
 ```html
 <!-- ngIf: render only when problem exists -->
 <div class = "container" *ngIf = "problem">

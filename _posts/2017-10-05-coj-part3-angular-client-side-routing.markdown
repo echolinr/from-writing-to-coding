@@ -29,6 +29,7 @@ import { Routes, RouterModule } from "@angular/router";
 ```
 
 3. Define the url path and its matching component. 
+
 ```ts
 const routes: Routes = [
  {
@@ -53,6 +54,7 @@ const routes: Routes = [
 ];
 ```
 As some paths directs to problem-list or problem-detail component, we need to import them.
+
 ```ts
 import { ProblemListComponent } from './components/problem-list/problem-list.component';
 import { ProblemDetailComponent } from './components/problem-detail/problem-detail.component';
@@ -60,10 +62,12 @@ import { ProblemDetailComponent } from './components/problem-detail/problem-deta
 ```
 
 4. export routing
+
 ```ts
 export const routing = RouterModule.forRoot(routes);
 ```
 5. Add routing modulein to 'app.module.ts'
+
 ```ts
 import { routing } from './app.routes';
 
@@ -79,6 +83,7 @@ import { routing } from './app.routes';
 Note: router/brower/ng is a module, added to `imports`; component is added to `declarations`; service is added to `provider`.
 
 ## Render router in 'app.component.html'
+
 ```html
 <router-outlet></router-outlet>
 ```
@@ -88,6 +93,7 @@ Note: router/brower/ng is a module, added to `imports`; component is added to `d
  
 RouterLink: one-way binding. 
 Add router to view ('problem-detail.component.html'):
+
 ```html
 ...
     <a class="list-group-item" *ngFor="let problem of problems"
@@ -97,6 +103,7 @@ Add router to view ('problem-detail.component.html'):
 
 ## Render problem in mock file
 1. import  mock data
+
 ```ts
 import { Problem } from 'app/data-structure/problem';
 ```
@@ -108,6 +115,7 @@ export class ProblemDetailComponent implements OnInit {
 ...
 ```
 2. Write the view (problem-detail.component.html):
+
 ```html
 <!-- ngIf: render only when problem exists -->
 <div class = "container" *ngIf = "problem">
@@ -138,6 +146,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 ```
 
 5. Use 'Prams'to get problem.id and problem.name ('problem-detail.component.ts')
+
 ```ts
 
   ngOnInit() {

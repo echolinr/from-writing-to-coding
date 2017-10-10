@@ -5,11 +5,6 @@ date:   2017-10-05 01:53:36 -0700
 categories: Angular
 ---
 
-## Mock data file
-Without any database, we use a mock data: a file.
-
-Create `mock-problems.ts` which contains the problems array. I have covered this in the previous post.
-
 
 ## Create an Angular service
 
@@ -29,7 +24,7 @@ export class DataService {
 
 Go to app.module.ts
 1. import dataservcie
-2. provide: 
+2. provide:
 ```ts
 ...
 import { DataService } from './services/data.service';
@@ -92,6 +87,3 @@ constructor(@Inject('data') private dataService) { }
     this.problems = this.dataService.getProblems();
   }
 ```
-
-
-
